@@ -40,6 +40,9 @@
                     <div class="mb-3">
                         You are logged in as {{ app.user.username }}, <a href="{{ path('admin_logout') }}">Logout</a>
                     </div>
+                    <div class="mb-3">
+                        Or you can go to, <a href="{{ path('sonata_admin_dashboard') }}">Admin</a>
+                    </div>
                     </br>
                 {% else %}
                     <p class="login-box-msg">{{ 'Authentication'|trans }}</p>
