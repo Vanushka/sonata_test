@@ -38,10 +38,10 @@
                 {% endfor %}
                 {% if app.user %}
                     <div class="mb-3">
-                        You are logged in as {{ app.user.username }}, <a href="{{ path('admin_logout') }}">{{ "Logout"|trans }}</a>
+                        {{ "You are logged in as"|trans }} {{ app.user.username }}, {{ "You can"|trans }} <a href="{{ path('admin_logout') }}">{{ "Logout"|trans }}</a>
                     </div>
                     <div class="mb-3">
-                        Or you can go to, <a href="{{ path('sonata_admin_dashboard') }}">Admin</a>
+                        {{ "Or you can go to"|trans }}, <a href="{{ path('sonata_admin_dashboard') }}">Admin Panel</a>
                     </div>
                     </br>
                 {% else %}

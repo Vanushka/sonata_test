@@ -2,7 +2,7 @@ Admin: Администратор
 Manager: Менеджер
 User List: Список пользователей
 Product List: Список продуктов
-User: Пользователи
+Users: Пользователи
 Username: Имя пользователя
 Id: Идентификатор
 Email: Почта
@@ -13,10 +13,13 @@ Password confirmation: Подтверждение пароля
 Created At: Дата создания
 Updated At: Дата обновления
 Action: Действия
-Catalog: Каталог
-products: Продукты
+Catalogs: Каталоги
+Products: Продукты
 Login: Войти
 Logout: Выйти
 Authentication: Авторизация
 Inactive account cannot log in: Неактивная учетная запись не может войти в систему
 Invalid credentials.: Неверные учетные данные
+You can: Вы можетe
+You are logged in as: Вы уже авторизованы как
+Or you can go to: Или вы можете пойти в

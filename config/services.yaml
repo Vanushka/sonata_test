@@ -4,7 +4,7 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: 'en'
+    locale: 'ru'
 
 services:
     # App\EventListener\CustomLogoutSubscriber:
@@ -38,12 +38,12 @@ services:
         class: App\Admin\UserAdmin
         arguments: [~, App\Entity\User, ~]
         tags:
-            - { name: sonata.admin, manager_type: orm, group: Admin, label: User, icon: '<i class="fa fa-user"></i>' }
+            - { name: sonata.admin, manager_type: orm, group: Admin, label: Users, icon: '<i class="fa fa-user"></i>' }
     admin.product:
         class: App\Admin\ProductAdmin
         arguments: [~, App\Entity\Product, ~]
         tags:
-            - { name: sonata.admin, manager_type: orm, group: Catalog, label: products, label_catalogue: messages }
+            - { name: sonata.admin, manager_type: orm, group: Catalogs, label: Products, label_catalogue: messages }
         calls:
             - [setTranslationDomain, ["messages"]]
         public: true
