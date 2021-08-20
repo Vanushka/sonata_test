@@ -7,6 +7,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
 use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
+use Symfony\Component\Security\Core\Exception\CustomUserMessageAuthenticationException;
 
 final class UserProvider implements UserProviderInterface
 {
@@ -47,6 +48,12 @@ final class UserProvider implements UserProviderInterface
     {
         assert($user instanceof User);
 
+        if (!$user->getActive()) {
+            throw new CustomUserMessageAuthenticationException(
+                'Inactive account cannot log in'
+            );
+        }
+        
         if (null === $reloadedUser = $this->findOneUserBy(['id' => $user->getId()])) {
             throw new UsernameNotFoundException(sprintf(
                 'User with ID "%s" could not be reloaded.',

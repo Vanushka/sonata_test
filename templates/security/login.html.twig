@@ -17,7 +17,7 @@
     <div class="login-box">
         <div class="login-logo">
             <a href="{{ path('sonata_admin_dashboard') }}">
-                <span>Login</span>
+                <span>{{ 'Login'|trans }}</span>
             </a>
         </div>
         <div class="login-box-body">
@@ -25,7 +25,7 @@
                 {% block sonata_user_login_error %}
                     {% if error %}
                         <div class="alert alert-danger">
-                            {{ error.messageKey|trans(error.messageData, 'security') }}
+                            {{ error.messageKey|trans(error.messageData, 'messages') }}
                         </div>
                     {% endif %}
                 {% endblock %}
@@ -38,7 +38,7 @@
                 {% endfor %}
                 {% if app.user %}
                     <div class="mb-3">
-                        You are logged in as {{ app.user.username }}, <a href="{{ path('admin_logout') }}">Logout</a>
+                        You are logged in as {{ app.user.username }}, <a href="{{ path('admin_logout') }}">{{ "Logout"|trans }}</a>
                     </div>
                     <div class="mb-3">
                         Or you can go to, <a href="{{ path('sonata_admin_dashboard') }}">Admin</a>
@@ -51,18 +51,18 @@
                     {{ form_row(form._token) }}
 
                     <div class="form-group has-feedback">
-                        <input type="text" class="form-control" id="username" name="{{ form.email.vars.full_name }}" value="{{ last_username }}" required="required" placeholder="Email"/>
+                        <input type="text" class="form-control" id="username" name="{{ form.email.vars.full_name }}" value="{{ last_username }}" required="required" placeholder="{{ "Email"|trans }}"/>
                         <span class="glyphicon glyphicon-user form-control-feedback"></span>
                     </div>
 
                     <div class="form-group has-feedback">
-                        <input type="password" class="form-control" id="password" name="{{ form.password.vars.full_name }}" required="required" placeholder="Password"/>
+                        <input type="password" class="form-control" id="password" name="{{ form.password.vars.full_name }}" required="required" placeholder="{{ "Password"|trans }}"/>
                         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     </div>
 
                     <div class="row">
                         <div class="col-xs-4">
-                            <button type="submit" class="btn btn-primary btn-block btn-flat">Login</button>
+                            <button type="submit" class="btn btn-primary btn-block btn-flat">{{ 'Login'|trans }}</button>
                         </div>
                     </div>
                 </form>

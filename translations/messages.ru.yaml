@@ -1,0 +1,22 @@
+Admin: Администратор
+Manager: Менеджер
+User List: Список пользователей
+Product List: Список продуктов
+User: Пользователи
+Username: Имя пользователя
+Id: Идентификатор
+Email: Почта
+Roles: Роли
+Active: Статус активности
+Password: Пароль
+Password confirmation: Подтверждение пароля
+Created At: Дата создания
+Updated At: Дата обновления
+Action: Действия
+Catalog: Каталог
+products: Продукты
+Login: Войти
+Logout: Выйти
+Authentication: Авторизация
+Inactive account cannot log in: Неактивная учетная запись не может войти в систему
+Invalid credentials.: Неверные учетные данные

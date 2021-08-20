@@ -7,6 +7,10 @@ parameters:
     locale: 'en'
 
 services:
+    # App\EventListener\CustomLogoutSubscriber:
+    #     tags:
+    #         - name: kernel.event_subscriber
+    #           dispatcher: security.event_dispatcher.main
     # default configuration for services in *this* file
     _defaults:
         autowire: true      # Automatically injects dependencies in your services.
@@ -30,3 +34,16 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+    admin.user:
+        class: App\Admin\UserAdmin
+        arguments: [~, App\Entity\User, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Admin, label: User, icon: '<i class="fa fa-user"></i>' }
+    admin.product:
+        class: App\Admin\ProductAdmin
+        arguments: [~, App\Entity\Product, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Catalog, label: products, label_catalogue: messages }
+        calls:
+            - [setTranslationDomain, ["messages"]]
+        public: true
