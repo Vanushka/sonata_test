@@ -1,0 +1,11 @@
+<ul class="dropdown-menu" style="max-width:100%;">
+    <li role="presentation" class="dropdown-header">
+        <i class="fa fa-user"></i>
+        {% if app.user %}
+            {{ app.user.username }}
+        {% endif %}
+    </li>
+    <li role="presentation">
+        <a href="{{ path('admin_logout') }}" class="dropdown-item">{{ "Logout"|trans([], "messages") }}</a>
+    </li>
+</ul>

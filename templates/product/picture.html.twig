@@ -1,0 +1,10 @@
+{% extends '@SonataAdmin/CRUD/base_list_field.html.twig' %}
+{% block field %}
+<div>
+    {% if object.image != null %}
+    <img width="54" height="54" src="{{ '/uploads/product_images/' ~ object.image }}">
+    {% else %}
+    <span>No picture</span>
+    {% endif %}
+</div>
+{% endblock %}
