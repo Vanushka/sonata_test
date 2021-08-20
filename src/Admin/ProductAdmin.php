@@ -13,9 +13,33 @@ use Sonata\AdminBundle\Show\ShowMapper;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Sonata\DoctrineORMAdminBundle\Datagrid\ProxyQuery;
 
 final class ProductAdmin extends AbstractAdmin
 {
+    /**
+     * {@inheritDoc}
+     */
+    public function createQuery($context = 'list')
+    {
+        $user = $this->getConfigurationPool()->getContainer()->get('security.token_storage')->getToken()->getUser();
+
+            if(!in_array("ROLE_ADMIN", $user->getRoles())) {
+                $repository = $this->modelManager->getEntityManager($this->getClass())->getRepository($this->getClass());
+                $query = new ProxyQuery($repository->getAllActiveProducts());
+            } else {
+                $query = $this->getModelManager()->createQuery($this->getClass());
+                $query = $this->configureQuery($query);
+            }
+
+            foreach ($this->extensions as $extension) {
+                $extension->configureQuery($this, $query, $context);
+            }
+
+            return $query;
+            
+    }
+    
     protected function configureFormFields(FormMapper $formMapper): void
     {
         $image = $this->getSubject();
