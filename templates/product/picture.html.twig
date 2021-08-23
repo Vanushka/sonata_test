@@ -4,7 +4,7 @@
     {% if object.image != null %}
     <img width="54" height="54" src="{{ '/uploads/product_images/' ~ object.image }}">
     {% else %}
-    <span>No picture</span>
+    <span>{{ "No picture"|trans }}</span>
     {% endif %}
 </div>
 {% endblock %}

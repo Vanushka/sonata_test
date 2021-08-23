@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "33d426279a0cb054ce2883c475b7c46b",
+    "content-hash": "4e409bcecf3308033a56b197487b91e7",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -2516,6 +2516,42 @@
                 "source": "https://github.com/sensiolabs/SensioFrameworkExtraBundle/tree/v6.1.5"
             },
             "time": "2021-05-31T10:40:46+00:00"
+        },
+        {
+            "name": "somesh/php-query",
+            "version": "2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/slaith/phpQuery.git",
+                "reference": "91519876bb56ddc453a05be05d61c1a9489864c8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/slaith/phpQuery/zipball/91519876bb56ddc453a05be05d61c1a9489864c8",
+                "reference": "91519876bb56ddc453a05be05d61c1a9489864c8",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "phpQuery/phpQuery.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "somesh",
+                    "email": "mail@somesh.io"
+                }
+            ],
+            "description": "A composer wrapper for the phpQuery package",
+            "support": {
+                "source": "https://github.com/slaith/phpQuery/tree/2.0"
+            },
+            "time": "2018-04-19T11:48:21+00:00"
         },
         {
             "name": "sonata-project/admin-bundle",

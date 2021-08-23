@@ -9,6 +9,7 @@
         "doctrine/doctrine-migrations-bundle": "^3.1",
         "gedmo/doctrine-extensions": "^3.1",
         "sensio/framework-extra-bundle": "^6.1",
+        "somesh/php-query": "^2.0",
         "sonata-project/admin-bundle": "^3.104",
         "sonata-project/doctrine-orm-admin-bundle": "^3.35",
         "sonata-project/translation-bundle": "^2.8",

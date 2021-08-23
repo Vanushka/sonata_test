@@ -30,6 +30,18 @@ class ProductRepository extends ServiceEntityRepository
             ->orderBy('p.id', 'ASC');
     }
 
+    /**
+    * @return Product[] Returns an array of Product objects
+    */
+    public function getImportIdProduct($import_id)
+    {
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.import_id = :imp')
+            ->setParameter('imp', $import_id)
+            ->getQuery()
+            ->getOneOrNullResult();
+        }
+
     // /**
     //  * @return Product[] Returns an array of Product objects
     //  */

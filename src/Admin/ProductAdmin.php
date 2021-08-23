@@ -24,19 +24,19 @@ final class ProductAdmin extends AbstractAdmin
     {
         $user = $this->getConfigurationPool()->getContainer()->get('security.token_storage')->getToken()->getUser();
 
-            if(!in_array("ROLE_ADMIN", $user->getRoles())) {
-                $repository = $this->modelManager->getEntityManager($this->getClass())->getRepository($this->getClass());
-                $query = new ProxyQuery($repository->getAllActiveProducts());
-            } else {
-                $query = $this->getModelManager()->createQuery($this->getClass());
-                $query = $this->configureQuery($query);
-            }
+        if(!in_array("ROLE_ADMIN", $user->getRoles())) {
+            $repository = $this->modelManager->getEntityManager($this->getClass())->getRepository($this->getClass());
+            $query = new ProxyQuery($repository->getAllActiveProducts());
+        } else {
+            $query = $this->getModelManager()->createQuery($this->getClass());
+            $query = $this->configureQuery($query);
+        }
 
-            foreach ($this->extensions as $extension) {
-                $extension->configureQuery($this, $query, $context);
-            }
+        foreach ($this->extensions as $extension) {
+            $extension->configureQuery($this, $query, $context);
+        }
 
-            return $query;
+        return $query;
             
     }
     
@@ -97,16 +97,7 @@ final class ProductAdmin extends AbstractAdmin
                     'edit' => [],
                     'delete' => []
                 ]
-            ])
-            ->add('product', null, array(
-                'query_builder' => function(EntityRepository $er) {
-                    dd($er);
-                     return $er->createQueryBuilder('qb')
-                               ->leftjoin('qb.products', 'p')
-                               ->where('p.active = :act')
-                               ->setParameter('act', true);
-                 }
-            ));
+            ]);
     }
 
     protected function configureShowFields(ShowMapper $showMaper): void

@@ -129,6 +129,11 @@ class Product
      * @ORM\Column(type="boolean")
      */
     private $active = true;
+
+    /**
+     * @ORM\Column(type="integer", unique=true, nullable=true)
+     */
+    private $import_id;
     
     /**
      * @ORM\Column(type="datetime_immutable")
@@ -195,12 +200,24 @@ class Product
 
     public function getActive(): bool
     {
-        return (string) $this->active;
+        return (bool) $this->active;
     }
 
     public function setActive(bool $active): self
     {
         $this->active = $active;
+
+        return $this;
+    }
+
+    public function getImport(): self
+    {
+        return $this->import_id;
+    }
+
+    public function setImport(float $import_id): self
+    {
+        $this->import_id = $import_id;
 
         return $this;
     }
