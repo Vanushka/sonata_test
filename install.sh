@@ -21,4 +21,4 @@ mkdir var/uploads/product_images
 
 ln -s $PWD/var/uploads/ $PWD/public/
 
-echo "Congratulations project installed!"
+echo "Congratulations! project installed!"
