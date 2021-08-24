@@ -17,7 +17,7 @@
 Склонируйте репозиторий к себе на компьютер
 
 ```
-git clone git@github.com:Vanushka/citymall_layout.git
+git clone git@github.com:Vanushka/sonata_test.git
 ```
 
 Войдите в проект
