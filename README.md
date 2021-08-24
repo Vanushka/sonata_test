@@ -37,9 +37,11 @@ cd sonata_test
 bash install.sh
 ```
 
-Если хотите запустить проект из консоли, выполните две команды:
+Если хотите запустить проект из консоли, выполните три команды:
 
 ```
+wget https://get.symfony.com/cli/installer -O - | bash
+
 export PATH="$HOME/.symfony/bin:$PATH"
 
 symfony serve
