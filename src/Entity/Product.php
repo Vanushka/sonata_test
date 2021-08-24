@@ -111,7 +111,7 @@ class Product
     /**
      * @var string
      *
-     * @ORM\Column(name="slug", type="string", length=128, nullable=false, unique=true)
+     * @ORM\Column(name="slug", type="string", length=128, nullable=false)
      */
     private $slug;
 
