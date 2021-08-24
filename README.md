@@ -26,9 +26,15 @@ git clone git@github.com:Vanushka/sonata_test.git
 cd sonata_test
 ```
 
-По умолчанию в .env.example стоит наименование базы данных - sonata_test
-И пароль - password
-Если Вы хотите, можете заменить их под себя
+По умолчанию в .env.example стоят настройки к базе данных:
+
+```
+db_name: sonata_test
+db_username: root
+db:password: password
+```
+
+Если Вы хотите, можете заменить эти настройки под себя
 
 
 Для полной установки запустите файл
