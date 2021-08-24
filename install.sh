@@ -7,11 +7,11 @@ cat .env.example > .env.local
 
 composer install
 
-php bin/console doctrine:database:create
+php bin/console doctrine:database:create --no-interaction
 
-php bin/console doctrine:migrations:migrate
+php bin/console doctrine:migrations:migrate --no-interaction
 
-php bin/console doctrine:fixtures:load
+php bin/console doctrine:fixtures:load --no-interaction
 
 export PATH="$HOME/.symfony/bin:$PATH"
 
